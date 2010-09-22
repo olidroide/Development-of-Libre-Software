@@ -19,7 +19,7 @@ if len(sys.argv) > 3:
 	if resultado is None:
 		print ""
 	else:
-		print ("El resultado de %s %s %s es %s")%(firstArg,operator,secondArg,resultado)
+		print ("%s %s %s = %s")%(firstArg,operator,secondArg,resultado)
 else:
 	print "Warning: need parameters, for example 1 + 1"
 
