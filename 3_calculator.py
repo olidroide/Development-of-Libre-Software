@@ -1,3 +1,14 @@
+# 3.Calculator
+# Write a script to work like a calculator, implementing basic operations (+, -, *,
+# /), for two operators. The script will receive the operators and the operation from the
+# command line, see the examples below:
+# ./calculator.py 30 + 25
+# ./calculator.py 30 - 25
+# ./calculator.py 30 \* 25
+# ./calculator.py 30 / 25
+# Note that ’*’ must be escaped, since it’s a special character for the shell. Every
+# possible error should be handled showing appropriate error messages.
+
 import sys
 
 if len(sys.argv) > 3:
