@@ -7,6 +7,7 @@
 
 
 f = open('/etc/passwd','r')
+
 for i in f.readlines():
 	lineSplit = i.split(":")
 	user = lineSplit[0]
