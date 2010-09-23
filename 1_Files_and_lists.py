@@ -1,5 +1,4 @@
-# 1.
-# Files and lists
+# 1.Files and lists
 # Write a Python script that reads the contents of the passwd file (/etc/passwd) and
 # prints the shell used by every username. The output should be something like this:
 # root -> /bin/bash
