@@ -6,31 +6,39 @@
 # ./calculator.py 30 - 25
 # ./calculator.py 30 \* 25
 # ./calculator.py 30 / 25
-# Note that ’*’ must be escaped, since it’s a special character for the shell. Every
-# possible error should be handled showing appropriate error messages.
 
 import sys
 
+firstArg = 0
+secondArg = 0
+
 if len(sys.argv) > 3:
-	firstArg = sys.argv[1]
+
+# This Try from Antonio Navarro de Mingo exercice code. Thanks
+	try:
+		firstArg = float(sys.argv[1])
+		secondArg = float(sys.argv[3])
+	except ValueError:
+		print "Error: No input numeric values"
+		sys.exit(-1)
+# 
 	operator = sys.argv[2]
-	secondArg = sys.argv[3]
-	resultado = None
+	result = None
 	if operator == "+":
-		resultado = float(firstArg) + float(secondArg)
-	if operator == "-":
-		resultado = float(firstArg) - float(secondArg)
-	if operator == "*":
-		resultado = float(firstArg) * float(secondArg)
-	if operator == "/":
-		if float(secondArg) == 0:
+		result = firstArg + secondArg
+	elif operator == "-":
+		result = firstArg - secondArg
+	elif operator == "*":
+		result = firstArg * secondArg
+	elif operator == "/":
+		if secondArg == 0:
 			print "Error: No divide by zero please, maybe in other universe..."
 		else:
-			resultado = float(firstArg) / float(secondArg)
-	if resultado is None:
-		print ""
+			result = firstArg / secondArg
+	if result is None:
+		print "No Result"
 	else:
-		print ("%s %s %s = %s")%(firstArg,operator,secondArg,resultado)
+		print ("%s %s %s = %s")%(firstArg,operator,secondArg,result)
 else:
 	print "Warning: need parameters, for example 1 + 1"
 

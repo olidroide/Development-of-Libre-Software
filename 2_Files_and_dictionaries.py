@@ -16,12 +16,13 @@ if len(sys.argv) > 1:
 	for i in f.readlines():
 		lineSplit = i.split(":")
 		user = lineSplit[0]
-		path = lineSplit[len(lineSplit)-1]
+		path = lineSplit[-1]
 		userDict[user]=path
 	
-	if userParam in userDict:
-		print userDict[userParam]
-	else:
-		print "Error: The user not has shell"
+	try:
+		print userParam +" -> "+ userDict[userParam]
+	except KeyError:
+		print "User "+userParam+" Doesnt Exist. Try another"
+	f.close()
 else:
 	print "Warning: need parameters, put a name of user"
